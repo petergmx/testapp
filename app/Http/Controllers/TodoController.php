@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 use App\Models\Todo;
 use App\Models\Category;
 use Illuminate\Validation\Rule;
@@ -31,8 +32,14 @@ class TodoController extends Controller
 
 
     public function show(Todo $todo) {
+
+      $category = Category::find($todo->category_id);
+      $user = User::find($todo->user_id);
+
       return view('todos.show', [
-        'todo' => $todo
+        'todo' => $todo,
+        'category' => $category,
+        'user' => $user
       ]);
     }
 

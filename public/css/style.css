@@ -9,10 +9,22 @@ body {
   height: 50vh;
 }
 
+.vh-75 {
+  height: 75vh;
+}
+
+.w-75 {
+  width: 75%;
+}
+
 .nav-form {
   margin-top:2px;
 }
 
 .odskok {
   margin-top: 1px;
+}
+
+.content-box {
+  display: inline-block;
 }
