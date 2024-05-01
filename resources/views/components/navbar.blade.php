@@ -1,12 +1,22 @@
 <nav class="navbar">
     <ul class="nav justify-content-end fixed-top" style="padding-right:5em; background-color:#f1f1f1;">
         @auth
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('users.index') }}">Používatelia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('users.create') }}">Nový používateľ</a>
+            </li>
+            <li class="nav-item mt-2 py-0 text-secondary">|</li>
+
             <li class="nav-item">
               <a class="nav-link" href="/">Úlohy</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/todos/create">Nová úloha</a>
             </li>
+            <li class="nav-item mt-2 py-0 text-secondary">|</li>
             <li class="nav-item">
               <a class="nav-link" href="/categories">Kategórie</a>
             </li>

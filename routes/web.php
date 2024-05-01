@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
@@ -41,3 +42,7 @@ Route::post('categories/store', [CategoryController::class, 'store'])->name('cat
 Route::get('categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit')->middleware('auth');
 Route::patch('categories/{category}/update', [CategoryController::class, 'update'])->name('categories.update')->middleware('auth');
 Route::delete('categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories.delete')->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::resource('users', UserController::class);
+});
